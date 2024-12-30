@@ -1,20 +1,18 @@
-@keyframes glowing {
-    from {
-        box-shadow: 0 0 300px rgba(0, 255, 255, 0.2) inset;
-    }
-    to {
-        box-shadow: 0 0 320px rgba(0, 255, 255, 0.5) inset;
-    }
-}
-
+/* General body and HTML setup */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: #121212; /* Dark background for a hacking theme */
+    color: #00ff00; /* Neon green text color */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for hacker aesthetic */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
 }
 
 html {
-    box-shadow: 0 0 300px rgba(0, 255, 255, 0.2) inset;
     animation-name: glowing;
     animation-duration: 5s;
     animation-timing-function: ease-in-out;
@@ -23,199 +21,178 @@ html {
     position: relative;
 }
 
-body {
-    position: relative;
-    overflow-y: scroll; /* Enable vertical scrolling */
-    -webkit-overflow-scrolling: touch; /* Enable momentum scrolling in iOS */
+/* Glowing animation effect */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 255, 0, 0.7);
+    }
 }
 
-/* Hide the scrollbar */
-body::-webkit-scrollbar {
-    display: none;
-}
-
-/* Compensate for hidden scrollbar */
-body {
-    padding-right: 20px; /* Adjust as needed */
-}
-
-h1 {
-    color: #111117;
-    text-align: center;
-}
-
+/* Navbar Styling */
 .navbar {
-    background-color: black;
-    margin: 0;
-    padding: 10px;
+    background-color: #1b1b1b; /* Dark gray background for navbar */
+    padding: 20px;
     width: 100%;
-    height: auto;
-    line-height: 0.5em;
-    font-size: 18px;
+    text-align: center;
+    border-bottom: 2px solid #00ff00; /* Neon green border for navbar */
+    margin-bottom: 30px;
 }
 
 .navbar h1 {
-    color: rgb(0, 255, 0);
-    font-family: Arial, Helvetica, sans-serif;
+    color: #00ff00; /* Bright neon green text */
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for hacker feel */
 }
 
 .navbar p {
-    color: rgb(43, 255, 0);
-    font-family: Arial, Helvetica, sans-serif;
+    color: #00ff7f; /* Lighter neon green color */
+    font-family: 'Courier New', Courier, monospace;
 }
 
+/* Container Styling */
+.container {
+    text-align: center; /* Center text within the container */
+    width: 80%;
+    max-width: 800px; /* Limit the width of the container */
+    margin: 0 auto;
+}
+
+/* About Section Styling */
+.about {
+    margin-bottom: 30px;
+}
+
+.about p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Textarea Styling */
 textarea {
     font-size: 20px;
-    color: #111117;
-    display: block;
+    color: #00ff00; /* Neon green text */
+    background-color: #2a2a2a; /* Dark gray background for textarea */
+    border: 1px solid #00ff00; /* Neon green border */
+    border-radius: 4px;
+    padding: 10px;
     width: 80%;
     height: 280px;
-    text-align: left;
-    margin: 0 auto;
-    border: 1px solid rgb(30, 255, 0);
-    background: rgba(0, 255, 255, 0.1);
-    border-radius: 4px;
-    z-index: 20;
-    transition: all 0.3s;
-}
-
-textarea:hover {
-    box-shadow: 0 0 20px rgb(0, 255, 13);
-}
-
-p {
-    text-align: center;
-    color: black;
-}
-
-.btn5 {
-    align-items: center;
-    color: rgb(21, 255, 0);
-    border: 1px solid rgb(0, 255, 13);
-    background-color: transparent;
-    mask-repeat: no-repeat;
-    mask-position: center center;
-    mask-size: 90% 80%;
-    font-family: verdana, sans-serif;
-    font-size: 1em;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    width: 15%;
-    height: 40px;
-    margin: 1% 3%;
-}
-
-.btn5:hover,
-.btn5:active {
-    color: black;
-}
-
-.btn5:hover:after {
-    width: 100%;
-    opacity: 1;
-}
-
-footer {
-    display: block;
-    width: 90%;
-    height: 50px;
     margin: 10px auto;
-    border: 1px solid rgb(0, 255, 34);
-    background: transparent;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+textarea:focus {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Neon green glow on focus */
+}
+
+/* Button Styling */
+.btn5 {
+    color: #00ff00; /* Neon green text color */
+    border: 1px solid #00ff00; /* Neon green border */
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.btn5:hover, .btn5:active {
+    background-color: #00ff00;
+    color: #121212; /* Dark background with neon green text on hover */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+    transform: scale(1.1); /* Slight scaling effect */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1b1b1b; /* Dark gray background for footer */
+    padding: 15px;
+    width: 90%;
+    margin: 20px auto;
     border-radius: 4px;
-    z-index: 20;
-    transition: all 0.3s;
+    border: 1px solid #00ff00; /* Neon green border for footer */
+    text-align: center;
 }
 
 footer p {
-    color: black;
-    font-family: verdana, sans-serif;
+    color: #00ff00; /* Neon green footer text */
 }
 
 footer p a {
-    color: black;
+    color: #00ff00; /* Neon green link color */
     text-decoration: none;
-    font-family: verdana, sans-serif;
-    transition: all 0.3s;
+    transition: color 0.3s ease;
 }
 
 footer p a:hover {
-    color: rgb(0, 255, 34);
+    color: #00ffff; /* Light cyan hover effect on links */
 }
 
-#contact {
-    text-align: left;
-    float: left;
-    margin-left: 10px;
-}
-
-#website {
-    text-align: right;
-    float: right;
-    margin-right: 10px;
-}
-
+/* Platform selection dropdown styling */
 #platformSelect {
-    width: 200px; /* Adjust width as needed */
-    padding: 8px; /* Adjust padding as needed */
-    font-size: 16px; /* Adjust font size as needed */
-    border: 1px solid #ccc; /* Adjust border color and width as needed */
-    border-radius: 5px; /* Adjust border radius as needed */
-    margin-top: 20px; /* Adjust margin top as needed */
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    color: #00ff00; /* Neon green text color */
+    background-color: #2a2a2a; /* Dark gray background for dropdown */
+    border: 1px solid #00ff00; /* Neon green border */
+    border-radius: 5px;
+    margin: 20px auto;
+    display: block;
 }
 
-/* Media query for devices with a maximum width of 768 pixels (tablets and smaller screens) */
+#platformSelect option {
+    color: #00ff00;
+    background-color: #121212; /* Dark background for dropdown options */
+}
+
+/* Scrollbar adjustments */
+body::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Media Queries for smaller screens */
 @media only screen and (max-width: 768px) {
-    /* CSS styles for tablets and smaller screens */
-    body {
-        padding-right: 10px; /* Adjust as needed */
-    }
     .navbar h1 {
-        font-size: 16px; /* Adjust font size as needed */
+        font-size: 24px;
     }
     textarea {
-        width: 90%; /* Adjust width as needed */
+        width: 90%;
+        font-size: 18px;
     }
     .btn5 {
-        width: 30%; /* Adjust width as needed */
+        width: 60%;
     }
 }
 
-/* Media query for devices with a maximum width of 480 pixels (smartphones) */
 @media only screen and (max-width: 480px) {
-    /* CSS styles for smartphones */
-    body {
-        padding-right: 5px; /* Adjust as needed */
-    }
     .navbar h1 {
-        font-size: 14px; /* Adjust font size as needed */
+        font-size: 20px;
     }
     textarea {
-        width: 95%; /* Adjust width as needed */
+        width: 95%;
+        font-size: 16px;
     }
     .btn5 {
-        width: 40%; /* Adjust width as needed */
+        width: 70%;
     }
     footer p {
-        color: black;
-        font-family: verdana, sans-serif;
         font-size: 14px;
-    }
-    #website {
-        text-align: left;
-        float: left;
-        margin-left: auto;
-    }
-    footer {
-        display: block;
-        width: 90%;
-        height: 60px;
-        margin: 10px auto;
-        border: 1px solid rgba(0, 190, 190, 1);
-        background: transparent;
-        border-radius: 4px;
-        z-index: 20;
-        transition: all 0.3s;
     }
 }
